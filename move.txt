@@ -1,0 +1,99 @@
+protected void moveOperation(){
+
+        Vector2 actuator = JoyStickController.actuator;
+
+        if(actuator.x > 0.1f && !this.bObsession) {
+
+            if (this.move.x < 0 && this.bJump) {
+
+                this.move.x = 0f;
+
+            }
+
+            this.move.x += PLAYER_MOVE;
+
+            //スティックの移動力に合わせて現在の最大スピードを決定
+            float nowMaxSpeed = (Math.round(actuator.x * 100) / 100f) * PLAYER_MAXSPEED;
+
+            //1フレーム前の最大スピードが現在の最大スピードより大きい場合現在の最大スピードに設定
+            if(this.maxSpeed > nowMaxSpeed || this.maxSpeed < nowMaxSpeed){
+
+                this.maxSpeed = nowMaxSpeed;
+
+            }
+
+            //現在の移動量が最大スピードより大きい場合
+            if(this.move.x > this.maxSpeed) {
+
+                //移動量を徐々に減らす
+                this.move.x -= PLAYER_MOVE * 2;
+
+                if (this.move.x <= this.maxSpeed) {
+
+                    this.move.x = this.maxSpeed;
+
+                }
+
+            }
+
+        }else if(actuator.x < -0.1f && !this.bObsession){
+
+            if(this.move.x > 0 && this.bJump){
+
+                this.move.x = 0f;
+
+            }
+
+            this.move.x -= PLAYER_MOVE;
+
+            float nowMaxSpeed = (Math.round(actuator.x * 100) / 100f) * PLAYER_MAXSPEED;
+
+            //1フレーム前の最大スピードが現在の最大スピードより大きい場合現在の最大スピードに設定
+            if(this.maxSpeed > nowMaxSpeed || this.maxSpeed < nowMaxSpeed){
+
+                this.maxSpeed = nowMaxSpeed;
+
+            }
+
+            //現在の移動量が最大スピードより大きい場合
+            if(this.move.x < this.maxSpeed) {
+
+                //移動量を徐々に減らす
+                this.move.x += PLAYER_MOVE * 2;
+
+                if (this.move.x >= this.maxSpeed) {
+
+                    this.move.x = this.maxSpeed;
+
+                }
+
+            }
+
+
+        }else{
+
+            if(this.move.x > 0){
+
+                this.move.x -= PLAYER_MOVE;
+
+                if(this.move.x < 0){
+
+                    this.move.x = 0f;
+
+                }
+
+            }else if(this.move.x < 0){
+
+                this.move.x += PLAYER_MOVE;
+
+                if(this.move.x > 0){
+
+                    this.move.x = 0f;
+
+                }
+
+            }
+
+        }
+
+    }

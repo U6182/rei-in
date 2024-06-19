@@ -1,0 +1,92 @@
+#pragma once
+
+/**
+
+	@file MotionName.h
+	@brief モーション名
+	@author 木村憂哉
+	@date 2020/10/13
+
+*/
+
+#include	"Mof.h"
+
+class CMotionName {
+
+public:
+
+	/**
+	@enum tag_MOTION_SOUL
+	魂モーションの列挙定数
+
+	*/
+	typedef enum tag_MOTION_SOUL {
+
+		MOTOIN_SOUL_WAIT,
+		MOTOIN_SOUL_MOVE,
+		MOTOIN_SOUL_JUMP,
+		MOTOIN_SOUL_DAMAGE,
+
+	}MOTOIN_SOUL_NAME;
+
+	/**
+	@enum tag_MOTION_HANAKO
+	花子モーションの列挙定数
+
+	*/
+	typedef enum tag_MOTION_HANAKO {
+
+		MOTOIN_HANAKO_WAIT,
+		MOTOIN_HANAKO_MOVE,
+		MOTOIN_HANAKO_JUMP,
+		MOTOIN_HANAKO_DAMAGE,
+		MOTOIN_HANAKO_ATTACK,
+
+	}MOTOIN_HANAKO_NAME;
+
+	/**
+	@enum tag_MOTION_TEKETEKE
+	テケテケモーションの列挙定数
+
+	*/
+	typedef enum tag_MOTION_TEKETEKE {
+
+		MOTOIN_TEKETEKE_WAIT,
+		MOTOIN_TEKETEKE_MOVE,
+		MOTOIN_TEKETEKE_CHARGE,
+		MOTOIN_TEKETEKE_CHARGEATTACK,
+		MOTOIN_TEKETEKE_DAMAGE,
+
+	}MOTOIN_TEKETEKE_NAME;
+
+	/**
+	@enum tag_MOTION_KINZIROU
+	金次郎モーションの列挙定数
+
+	*/
+	typedef enum tag_MOTION_KINZIROU {
+
+		MOTOIN_KINZIROU_WAIT,
+		MOTOIN_KINZIROU_MOVE,
+		MOTOIN_KINZIROU_JUMP,
+		MOTOIN_KINZIROU_CARRY,
+		MOTOIN_KINZIROU_CARRYWAIT,
+
+	}MOTOIN_KINZIROU_NAME;
+
+	/**
+	@enum tag_MOTION_HUMANBODYMODLE
+	人体模型モーションの列挙定数
+
+	*/
+	typedef enum tag_MOTION_HUMANBODYMODLE {
+
+		MOTOIN_HUMANBODYMODLE_WAIT,
+		MOTOIN_HUMANBODYMODLE_MOVE,
+		MOTOIN_HUMANBODYMODLE_JUMP,
+		MOTOIN_HUMANBODYMODLE_DAMAGE,
+		MOTOIN_HUMANBODYMODLE_ATTACK,
+
+	}MOTOIN_HUMANBODYMODLE_NAME;
+
+};
